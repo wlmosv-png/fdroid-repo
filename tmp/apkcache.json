@@ -97,5 +97,17 @@
     "apkName": "WPAForge_124.apk",
     "icon": "io.github.wlmosv_png.wpaforge.124.png",
     "added": 1793320071.274228
+  },
+  "icon.png": {
+    "name": "icon",
+    "apkName": "icon.png",
+    "hash": "2050d06e3ed4b8c19b429d92be95c6ff51d28b81b6b06048b37974a7bac6a199",
+    "hashType": "sha256",
+    "ipfsCIDv1": null,
+    "versionCode": 0,
+    "versionName": "2050d06",
+    "packageName": "2050d06e3ed4b8c19b429d92be95c6ff51d28b81b6b06048b37974a7bac6a199",
+    "size": 5373,
+    "added": 1793320191.671956
   }
 }
