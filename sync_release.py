@@ -25,6 +25,10 @@ def main():
     tag = rel['tag_name'].lstrip('v')
     print('最新 release:', rel['tag_name'])
     os.makedirs('repo', exist_ok=True)
+    # 清掉旧 APK，避免同一版本存在两个文件名（fdroid 会报 duplicate）
+    for f in os.listdir('repo'):
+        if f.endswith('.apk'):
+            os.remove(os.path.join('repo', f))
 
     for asset in rel.get('assets', []):
         if not asset['name'].lower().endswith('.apk'):
