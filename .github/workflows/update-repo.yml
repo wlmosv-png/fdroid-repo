@@ -1,0 +1,73 @@
+name: Update F-Droid repo
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 每天 UTC 03:20 检查一次 wpaforge 是否发了新版
+    - cron: '20 3 * * *'
+  repository_dispatch:
+    types: [update-repo]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-repo
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装 fdroidserver 与 apksigner
+        run: |
+          pip install --quiet fdroidserver
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq apksigner aapt
+          which fdroid apksigner aapt
+
+      - name: 还原签名密钥
+        env:
+          KS_B64: ${{ secrets.FDROID_KEYSTORE_B64 }}
+        run: |
+          echo "$KS_B64" | base64 -d > repo.jks
+          mkdir -p sdk
+          ls -l repo.jks
+
+      - name: 生成 config.yml
+        env:
+          FDROID_KEYSTORE_PASS: ${{ secrets.FDROID_KEYSTORE_PASS }}
+        run: python3 make_config.py
+
+      - name: 同步 wpaforge 最新 release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 sync_release.py
+
+      - name: 更新索引
+        run: |
+          rm -rf repo/status
+          fdroid update
+          ls -l repo/ | head -20
+
+      - name: 清理临时密钥
+        if: always()
+        run: rm -f repo.jks config.yml
+
+      - name: 提交并推送
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "没有变化，跳过提交"
+          else
+            git commit -m "chore: 同步 wpaforge release 并重建索引"
+            git push
+          fi
