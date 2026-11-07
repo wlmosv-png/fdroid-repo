@@ -108,7 +108,7 @@
     "versionName": "2050d06",
     "packageName": "2050d06e3ed4b8c19b429d92be95c6ff51d28b81b6b06048b37974a7bac6a199",
     "size": 5373,
-    "added": 1793963346.191847
+    "added": 1794047208.048278
   },
   "WPAForge_1.9.28.apk": {
     "hash": "2e1acbfdf3aaac2e4af4d6bad8d1eecdd21aaf1a46cf42981da9e0cc2cd7af02",
@@ -399,6 +399,6 @@
     "size": 1547474,
     "apkName": "WPAForge_1.9.50.apk",
     "icon": "io.github.wlmosv_png.wpaforge.146.png",
-    "added": 1793963346.19132
+    "added": 1793963346.0
   }
 }
