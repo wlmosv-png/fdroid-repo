@@ -108,7 +108,7 @@
     "versionName": "2050d06",
     "packageName": "2050d06e3ed4b8c19b429d92be95c6ff51d28b81b6b06048b37974a7bac6a199",
     "size": 5373,
-    "added": 1794224921.3967
+    "added": 1794309907.043322
   },
   "WPAForge_1.9.28.apk": {
     "hash": "2e1acbfdf3aaac2e4af4d6bad8d1eecdd21aaf1a46cf42981da9e0cc2cd7af02",
@@ -400,5 +400,102 @@
     "apkName": "WPAForge_1.9.50.apk",
     "icon": "io.github.wlmosv_png.wpaforge.146.png",
     "added": 1793963346.0
+  },
+  "WPAForge_1.9.59.apk": {
+    "hash": "64381351b350143f10cb19314db44b811ba3c220e94c741c038221a248de614a",
+    "hashType": "sha256",
+    "uses-permission": [
+      [
+        "android.permission.NEARBY_WIFI_DEVICES",
+        null
+      ],
+      [
+        "android.permission.ACCESS_FINE_LOCATION",
+        null
+      ],
+      [
+        "android.permission.ACCESS_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.CHANGE_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.CHANGE_NETWORK_STATE",
+        null
+      ],
+      [
+        "android.permission.ACCESS_NETWORK_STATE",
+        null
+      ],
+      [
+        "android.permission.INTERNET",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE_DATA_SYNC",
+        null
+      ],
+      [
+        "android.permission.POST_NOTIFICATIONS",
+        null
+      ],
+      [
+        "android.permission.WAKE_LOCK",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+        null
+      ],
+      [
+        "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+        null
+      ],
+      [
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        null
+      ]
+    ],
+    "uses-permission-sdk-23": [],
+    "features": [],
+    "icons_src": {
+      "160": "res/mipmap-mdpi-v4/ic_launcher.png",
+      "240": "res/mipmap-hdpi-v4/ic_launcher.png",
+      "320": "res/mipmap-xhdpi-v4/ic_launcher.png",
+      "480": "res/mipmap-xxhdpi-v4/ic_launcher.png",
+      "640": "res/mipmap-xxxhdpi-v4/ic_launcher.png",
+      "-1": "res/mipmap-mdpi-v4/ic_launcher.png"
+    },
+    "icons": {
+      "640": "io.github.wlmosv_png.wpaforge.155.png",
+      "480": "io.github.wlmosv_png.wpaforge.155.png",
+      "320": "io.github.wlmosv_png.wpaforge.155.png",
+      "240": "io.github.wlmosv_png.wpaforge.155.png",
+      "160": "io.github.wlmosv_png.wpaforge.155.png",
+      "0": "io.github.wlmosv_png.wpaforge.155.png"
+    },
+    "antiFeatures": {},
+    "packageName": "io.github.wlmosv_png.wpaforge",
+    "versionCode": 155,
+    "name": "WPAForge",
+    "versionName": "1.9.59",
+    "minSdkVersion": 26,
+    "targetSdkVersion": 35,
+    "sig": "832983cdc085a15731c4ed36cce914ab",
+    "signer": "af5524cd554ae6ede3ec2747c7bed159b09bc4f6a43244a68b4622e9463225c8",
+    "size": 1715488,
+    "apkName": "WPAForge_1.9.59.apk",
+    "icon": "io.github.wlmosv_png.wpaforge.155.png",
+    "added": 1794309907.042765
   }
 }
